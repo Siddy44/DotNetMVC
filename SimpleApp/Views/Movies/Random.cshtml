@@ -1,0 +1,44 @@
+﻿@*@model SimpleApp.Models.Movies*@
+@*@model SimpleApp.ModelView.RandomModelView*@
+@* @using SimpleApp.Models -->*@
+@model SimpleApp.ModelView.RandomViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* <h2>@(((Movies)ViewData["Movie"]).Title) </h2>*@
+@* <h2>@ViewBag.Movie.Title</h2>*@
+@*<h2>@Model.Title</h2>*@
+
+@*@{ 
+    var hello = Model.customers.Count > 0 ? "popular" : null;
+}
+<h2 class="@hello">@Model.Movie.Title</h2>
+@foreach (var item in Model.customers)
+{
+    <div>
+        <h3>
+        @item.Name
+        </h3>
+    </div>
+}*@
+@*
+ this is a comment     
+*@
+@{ 
+    var className = Model.customers.Count > 0 ? "popular" : null;
+}
+<h2 class="@className">@Model.Movie.Title</h2>
+@if (Model.customers.Count == 0)
+            {
+                <text>No one has rented this movie before.</text>
+            }
+else { 
+<ul>
+    @foreach (var customers in Model.customers)
+    {
+        <li>@customers.Name</li>
+    }
+</ul>
+}

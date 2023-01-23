@@ -1,0 +1,43 @@
+﻿@model SimpleApp.Models.Customer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+<h4>Customer</h4>
+<hr />
+
+
+
+
+
+@using (Html.BeginForm("DeleteRecord", "Customer"))
+{
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.Name)
+        @Html.EditorFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.Birthdate)
+        @Html.Editor("Birthdate")
+    </div>
+    <div class="form-group">
+        @Html.DisplayNameFor(m => m.MembershipTypeId)
+        @Html.DisplayFor(m => m.MembershipType.Name)
+    </div>
+    <div class="checkbox">
+
+        @Html.DisplayFor(m => m.IsSubscribedToNewsLetter) Is Subscribed To NewsLetter
+
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-primary">Delete</button>
+
+}
+
+
