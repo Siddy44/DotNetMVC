@@ -1,21 +1,42 @@
-﻿using SimpleApp.Models;
+﻿using SimpleApp.Context;
+using SimpleApp.Models;
 using SimpleApp.ModelView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Data.Entity;
+using SimpleApp.ViewModel;
+using System.Data.Entity.Validation;
 
 namespace SimpleApp.Controllers
 {
     public class MoviesController : Controller
     {
+
+        private CustomerContext _context;
+
+        public MoviesController()
+        {
+            _context = new CustomerContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
+
+
         //  [Route("movies/name/")]
         //public ActionResult ByReleaseDate()
         //{
         //return Content("My Default"); 
         //}
+
+
+
         public ActionResult Random()
         {
             var movie = new Movies() { Title = "Mission Impossible!" };
@@ -57,10 +78,14 @@ namespace SimpleApp.Controllers
             return View(viewModel);
             // return PartialView(obj);
         }
-        public ActionResult Edit(int movieid)
-        {
-            return Content("id= " + movieid);
-        }
+ 
+        
+        
+        
+        //public ActionResult Edit(int movieid)
+        //{
+        //    return Content("id= " + movieid);
+        //}
         //Get Movies
         //public ActionResult Index(int? pageIndex,string sortBy)
         //{
@@ -76,28 +101,96 @@ namespace SimpleApp.Controllers
         //}
 
 
+
+
+
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year, int month)
         {
             return Content(year + "/" + month);
         }
 
+ 
+        
+        
+        
         public ViewResult Index()
         {
-            var movies = GetMovies();
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
 
             return View(movies);
 
 
         }
 
-        private IEnumerable<Movies> GetMovies()
+        public ActionResult Details(int id)
         {
-            return new List<Movies>
+            var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
+
+        }
+
+        public ViewResult MovieForm()
+        {
+            var genre = _context.Genre.ToList();
+
+            var viewModel = new MovieFormViewModel
             {
-                new Movies { Id = 1, Title = "Shrek" },
-                new Movies { Id = 2, Title = "Wall-e" }
+                Genre = genre
             };
+
+            return View(viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movies = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movies == null)
+                return HttpNotFound();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movies = movies,
+                Genre = _context.Genre.ToList()
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Movies movies)
+        {
+
+
+
+            if (movies.Id == 0)
+            {
+                movies.DateAdded = DateTime.Now;
+                _context.Movies.Add(movies);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movies.Id);
+                movieInDb.Title = movies.Title;
+                movieInDb.GenreId = movies.GenreId;
+                movieInDb.NumberInStock = movies.NumberInStock;
+                movieInDb.ReleaseDate = movies.ReleaseDate;
+            }
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch(DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+            }
+
+            return RedirectToAction("Index", "Movies");
         }
     }
 }

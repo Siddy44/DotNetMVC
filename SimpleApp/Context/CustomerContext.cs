@@ -12,5 +12,7 @@ namespace SimpleApp.Context
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Movies> Movies { get; set; }
         public DbSet<MembershipType> MembershipType { get; set; }
+
+        public DbSet<Genre> Genre { get; set; }
     }
 }

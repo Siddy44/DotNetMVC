@@ -24,6 +24,7 @@ namespace SimpleApp.Controllers
         }
         public ActionResult New()
         {
+           
             var membershipType = _context.MembershipType.ToList();
             var viewModel = new NewCustomerViewModel
             {
@@ -34,7 +35,15 @@ namespace SimpleApp.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer
 
+                };
+                return View("new",viewModel);
+            }
             if (customer.Id==0)
             _context.Customer.Add(customer);
             else

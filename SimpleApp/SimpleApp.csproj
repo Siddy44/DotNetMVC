@@ -178,10 +178,28 @@
     <Compile Include="Migrations\202301191228182_AddMembershipTypeToDbContext.designer.cs">
       <DependentUpon>202301191228182_AddMembershipTypeToDbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301230815174_NewFieldsInMovies.cs" />
+    <Compile Include="Migrations\202301230815174_NewFieldsInMovies.designer.cs">
+      <DependentUpon>202301230815174_NewFieldsInMovies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301231007189_PopulateGenres.cs" />
+    <Compile Include="Migrations\202301231007189_PopulateGenres.designer.cs">
+      <DependentUpon>202301231007189_PopulateGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301231401311_Genre.cs" />
+    <Compile Include="Migrations\202301231401311_Genre.designer.cs">
+      <DependentUpon>202301231401311_Genre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301231412160_NullableDateAdded.cs" />
+    <Compile Include="Migrations\202301231412160_NullableDateAdded.designer.cs">
+      <DependentUpon>202301231412160_NullableDateAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movies.cs" />
+    <Compile Include="ViewModel\MovieFormViewModel.cs" />
     <Compile Include="ViewModel\NewCustomerViewModel.cs" />
     <Compile Include="ViewModel\RandomViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,6 +249,8 @@
     <Content Include="Views\Customer\New.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Customer\check.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +307,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301191228182_AddMembershipTypeToDbContext.resx">
       <DependentUpon>202301191228182_AddMembershipTypeToDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301230815174_NewFieldsInMovies.resx">
+      <DependentUpon>202301230815174_NewFieldsInMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301231007189_PopulateGenres.resx">
+      <DependentUpon>202301231007189_PopulateGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301231401311_Genre.resx">
+      <DependentUpon>202301231401311_Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301231412160_NullableDateAdded.resx">
+      <DependentUpon>202301231412160_NullableDateAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

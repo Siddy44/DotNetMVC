@@ -1,0 +1,34 @@
+﻿@model SimpleApp.ViewModel.MovieFormViewModel
+@{
+    ViewBag.Title = "MovieForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Movies"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movies.Title)
+        @Html.TextBoxFor(m => m.Movies.Title, new { @class = "form-control" })
+    </div>
+
+    
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movies.ReleaseDate)
+
+        @Html.TextBoxFor(m => m.Movies.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movies.GenreId)
+        @Html.DropDownListFor(m => m.Movies.GenreId, new SelectList(Model.Genre, "Id", "Name"), "", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movies.NumberInStock)
+        @Html.TextBoxFor(m => m.Movies.NumberInStock, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Movies.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+

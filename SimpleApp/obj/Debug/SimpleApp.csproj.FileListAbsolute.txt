@@ -288,6 +288,8 @@ D:\Revamp\SimpleApp\SimpleApp\bin\roslyn\vbc.rsp
 D:\Revamp\SimpleApp\SimpleApp\bin\roslyn\VBCSCompiler.exe
 D:\Revamp\SimpleApp\SimpleApp\bin\roslyn\VBCSCompiler.exe.config
 D:\Revamp\SimpleApp\SimpleApp\bin\Antlr3.Runtime.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.SqlServer.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\Microsoft.Web.Infrastructure.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\Newtonsoft.Json.dll
@@ -299,6 +301,8 @@ D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.WebPages.Deployment.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.WebPages.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.WebPages.Razor.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\WebGrease.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.xml
+D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.SqlServer.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Helpers.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Mvc.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Optimization.xml
@@ -310,16 +314,7 @@ D:\Revamp\SimpleApp\SimpleApp\bin\Newtonsoft.Json.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\Antlr3.Runtime.pdb
 D:\Revamp\SimpleApp\SimpleApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.AssemblyReference.cache
-D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CoreCompileInputs.cache
-D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CopyComplete
-D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.dll
-D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.pdb
-D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.dll
-D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.SqlServer.dll
-D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.xml
-D:\Revamp\SimpleApp\SimpleApp\bin\EntityFramework.SqlServer.xml
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.InitialModelCustomer.resources
-D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.GenerateResource.cache
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.CustomerIsSubscribedToNewsLetter.resources
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.AddMembershipType.resources
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.PopulateMembershipTypes.resources
@@ -330,3 +325,12 @@ D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.AddNamePropertyToCu
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.SetBirthdatetoCustomer.resources
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.AddMovieToDbContext.resources
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.AddMembershipTypeToDbContext.resources
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.NewFieldsInMovies.resources
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.PopulateGenres.resources
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.Genre.resources
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.Migrations.NullableDateAdded.resources
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.GenerateResource.cache
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CoreCompileInputs.cache
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CopyComplete
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.dll
+D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.pdb
