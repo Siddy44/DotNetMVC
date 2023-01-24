@@ -39,7 +39,9 @@ namespace SimpleApp.Controllers
             {
                 var viewModel = new NewCustomerViewModel
                 {
-                    Customer = customer
+                    Customer = customer,
+                    MembershipType = _context.MembershipType.ToList(),
+                   
 
                 };
                 return View("new",viewModel);
