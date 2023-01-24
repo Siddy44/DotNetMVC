@@ -9,7 +9,7 @@ namespace SimpleApp.Models
     public class Customer
     {
         public int Id { get; set; }
-        [Required]
+        [Required (ErrorMessage = "Please Enter the Name of the Customer")]
         [StringLength(100)]
         public string Name { get; set; }
         public bool IsSubscribedToNewsLetter { get; set; }
@@ -17,6 +17,7 @@ namespace SimpleApp.Models
         [Display(Name = "Membership Type")]
         public byte  MembershipTypeId { get; set; }
         [Display(Name ="Date Of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
     }
 }

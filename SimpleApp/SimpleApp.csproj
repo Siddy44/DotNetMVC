@@ -198,6 +198,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movies.cs" />
     <Compile Include="ViewModel\MovieFormViewModel.cs" />
     <Compile Include="ViewModel\NewCustomerViewModel.cs" />
