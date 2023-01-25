@@ -29,6 +29,7 @@
         </label>
     </div>
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()    //To prevent mallicious attack like CSRF, it will generate a hidden token
     <button type="submit" class="btn btn-primary">Save</button>
 }
 @section scripts
