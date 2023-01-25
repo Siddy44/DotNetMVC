@@ -11,7 +11,7 @@ namespace SimpleApp.Models
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var customer = (Customer)validationContext.ObjectInstance;
-            if(customer.MembershipTypeId == MembershipType.Unknown||
+            if(customer.MembershipTypeId == MembershipType.Unknown||      //Refactoring Magic Numbers by giving static prop
                customer.MembershipTypeId == MembershipType.PayAsYouGo)
             
                 return ValidationResult.Success;

@@ -28,6 +28,7 @@ namespace SimpleApp.Controllers
             var membershipType = _context.MembershipType.ToList();
             var viewModel = new NewCustomerViewModel
             {
+                Customer = new Customer() ,   //Prop Will Be initialized to default value
                 MembershipType = membershipType,
             };
             return View(viewModel);
