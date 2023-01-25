@@ -12,5 +12,8 @@ namespace SimpleApp.Models
         public short SignupFee { get; set; }
         public byte DurationInMonths { get; set; }
         public byte DiscountRate { get; set; }
+
+        public static  byte Unknown = 0;
+        public static byte PayAsYouGo = 1;
     }
 }
