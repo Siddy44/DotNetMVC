@@ -28,26 +28,26 @@ namespace SimpleApp.API
 
         //GET Api/Customers/id
 
-        public CustomerDto GetCustomers(int id) 
+        public IHttpActionResult GetCustomers(int id) 
         {
             var customer = _context.Customer.SingleOrDefault(c => c.Id == id);
-            if(customer == null)
-            throw new HttpResponseException(HttpStatusCode.NotFound);
-            return Mapper.Map<Customer,CustomerDto>(customer);
+            if (customer == null)
+                return BadRequest();
+            return Ok(Mapper.Map<Customer,CustomerDto>(customer));
         }
 
         //POST api/customers
 
         [HttpPost]
-        public CustomerDto CreateCustomer (CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer (CustomerDto customerDto)       //using IhttpAR to have more control over the response
         {
-            if(!ModelState.IsValid) 
-            throw new HttpResponseException(HttpStatusCode.BadRequest);
+            if (!ModelState.IsValid)
+                return BadRequest();                                            //returns class which implements IHttp
             var customer = Mapper.Map<CustomerDto,Customer>(customerDto);                 //AutoMApper
             _context.Customer.Add(customer);
             _context.SaveChanges();
             customerDto.Id = customer.Id; 
-            return customerDto;
+            return Created(new Uri(Request.RequestUri+"/"+customer.Id),customerDto);
         }
 
         //PUT  api/customers/1
