@@ -340,3 +340,5 @@ D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.WebHost.dll
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Net.Http.Formatting.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.xml
 D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.WebHost.xml
+D:\Revamp\SimpleApp\SimpleApp\bin\AutoMapper.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\AutoMapper.xml
