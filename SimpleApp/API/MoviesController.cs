@@ -140,6 +140,7 @@ namespace SimpleApp.Controllers
 
             var viewModel = new MovieFormViewModel
             {
+                Movies = new Movies(),
                 Genre = genre
             };
 
@@ -163,12 +164,22 @@ namespace SimpleApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movies movies)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel
+                {
+                    Movies = movies,
+                    Genre = _context.Genre.ToList(),
 
 
+                };
+                return View("MovieForm", viewModel);
+            }
 
-            if (movies.Id == 0)
+                if (movies.Id == 0)
             {
                 movies.DateAdded = DateTime.Now;
                 _context.Movies.Add(movies);

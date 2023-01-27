@@ -8,27 +8,37 @@
 
 @using (Html.BeginForm("Save", "Movies"))
 {
+    @Html.ValidationSummary(true,"Please Fix the following error")
     <div class="form-group">
         @Html.LabelFor(m => m.Movies.Title)
         @Html.TextBoxFor(m => m.Movies.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movies.Title)
     </div>
 
-    
+
 
     <div class="form-group">
         @Html.LabelFor(m => m.Movies.ReleaseDate)
-
         @Html.TextBoxFor(m => m.Movies.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movies.ReleaseDate)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movies.GenreId)
         @Html.DropDownListFor(m => m.Movies.GenreId, new SelectList(Model.Genre, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movies.GenreId)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movies.NumberInStock)
         @Html.TextBoxFor(m => m.Movies.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movies.NumberInStock,"")
     </div>
     @Html.HiddenFor(m => m.Movies.Id)
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Save</button>
 }
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")      @*Client Side Validation  *@
+}
+
 
