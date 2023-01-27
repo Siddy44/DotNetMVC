@@ -334,3 +334,9 @@ D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CoreCompileInputs.cache
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.csproj.CopyComplete
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.dll
 D:\Revamp\SimpleApp\SimpleApp\obj\Debug\SimpleApp.pdb
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Net.Http.Formatting.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.WebHost.dll
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Net.Http.Formatting.xml
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.xml
+D:\Revamp\SimpleApp\SimpleApp\bin\System.Web.Http.WebHost.xml

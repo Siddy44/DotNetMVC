@@ -1,4 +1,6 @@
-﻿using SimpleApp.Context;
+﻿using AutoMapper;
+using SimpleApp.Context;
+using SimpleApp.Dtos;
 using SimpleApp.Models;
 using System;
 using System.Collections.Generic;
@@ -19,45 +21,47 @@ namespace SimpleApp.API
         }
 
         //GET  Api/Customers
-        public IEnumerable<Customer> GetCustomers() 
-        { 
-          return _context.Customer.ToList();
+        public IEnumerable<CustomerDto> GetCustomers()                    //Using Data Transfer Object instead of domain classes
+        {
+            return _context.Customer.ToList().Select(Mapper.Map<Customer, CustomerDto>);
         }
 
         //GET Api/Customers/id
 
-        public Customer GetCustomers(int id) 
+        public CustomerDto GetCustomers(int id) 
         {
             var customer = _context.Customer.SingleOrDefault(c => c.Id == id);
             if(customer == null)
             throw new HttpResponseException(HttpStatusCode.NotFound);
-            return customer;
+            return Mapper.Map<Customer,CustomerDto>(customer);
         }
 
         //POST api/customers
 
         [HttpPost]
-        public Customer CreateCustomer (Customer customer)
+        public CustomerDto CreateCustomer (CustomerDto customerDto)
         {
             if(!ModelState.IsValid) 
             throw new HttpResponseException(HttpStatusCode.BadRequest);
-
+            var customer = Mapper.Map<CustomerDto,Customer>(customerDto);                 //AutoMApper
             _context.Customer.Add(customer);
             _context.SaveChanges();
-            return customer;
+            customerDto.Id = customer.Id; 
+            return customerDto;
         }
 
         //PUT  api/customers/1
         [HttpPut]
-        public void UpdateCustomer(int id, Customer customer) 
+        public void UpdateCustomer(int id, CustomerDto customerDto) 
         {
            var dbContext = _context.Customer.SingleOrDefault(c => c.Id==id);
-            if (customer == null)
+            if (dbContext == null)
             throw new HttpResponseException(HttpStatusCode.BadRequest);
-            dbContext.Name= customer.Name;
-            dbContext.Birthdate= customer.Birthdate;
-            dbContext.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
-            dbContext.MembershipTypeId= customer.MembershipTypeId;
+            Mapper.Map<CustomerDto, Customer>(customerDto, dbContext);           //Auto Mapper
+            //dbContext.Name= customer.Name;
+            //dbContext.Birthdate= customer.Birthdate;
+            //dbContext.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            //dbContext.MembershipTypeId= customer.MembershipTypeId;
             _context.SaveChanges();
         }
 
