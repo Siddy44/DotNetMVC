@@ -137,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\CustomersController.cs" />
+    <Compile Include="API\MoviesApiController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\MappingProfile.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="API\HomeController.cs" />
     <Compile Include="API\MoviesController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\MoviesDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -277,6 +279,7 @@
     <Folder Include="Views\Hello\" />
     <Folder Include="Views\JsonDemo\" />
     <Folder Include="Views\JsonFile\" />
+    <Folder Include="Views\MoviesApi\" />
     <Folder Include="Views\Testing\" />
   </ItemGroup>
   <ItemGroup>
