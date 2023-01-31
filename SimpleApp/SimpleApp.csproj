@@ -274,6 +274,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Repository\" />
     <Folder Include="Views\Double\" />
     <Folder Include="Views\Employee\" />
     <Folder Include="Views\Hello\" />
