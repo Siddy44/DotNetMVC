@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="API\CustomersController.cs" />
     <Compile Include="API\MoviesApiController.cs" />
+    <Compile Include="API\CustomersListController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\MappingProfile.cs" />
@@ -147,6 +148,9 @@
     <Compile Include="API\CustomerController.cs" />
     <Compile Include="API\HomeController.cs" />
     <Compile Include="API\MoviesController.cs" />
+    <Compile Include="DAL\CustomerDbContext.cs" />
+    <Compile Include="DAL\Services\CustomerService.cs" />
+    <Compile Include="DAL\Services\Interface\ICustomerService.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\MoviesDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,6 +222,8 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movies.cs" />
+    <Compile Include="Repository\CustomersRepository.cs" />
+    <Compile Include="Repository\Interface\ICustomersRepository.cs" />
     <Compile Include="ViewModel\MovieFormViewModel.cs" />
     <Compile Include="ViewModel\NewCustomerViewModel.cs" />
     <Compile Include="ViewModel\RandomViewModel.cs" />
@@ -233,6 +239,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -246,6 +254,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -274,7 +286,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Repository\" />
     <Folder Include="Views\Double\" />
     <Folder Include="Views\Employee\" />
     <Folder Include="Views\Hello\" />
